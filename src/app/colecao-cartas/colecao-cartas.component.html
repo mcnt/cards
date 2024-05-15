@@ -1,0 +1,25 @@
+<div *ngIf="loading" class="container centered-container">
+  <mat-card class="loading">
+    <div>
+      <mat-spinner diameter="60" color="primary"></mat-spinner>
+      <p>Abrindo seus booters</p>
+    </div>
+  </mat-card>
+</div>
+
+<div *ngIf="cardsSelecionados.length === 30 && !loading" class="container">
+    <h2>Suas cartas do pacote aberto</h2>
+    <div class="cards-grid">
+
+      <mat-card *ngFor="let card of cardsSelecionados" class="mat-card-item">
+        <mat-card-header>
+          <mat-card-title>{{ card.name }}</mat-card-title>
+          <mat-card-subtitle>{{ card.manaCost }} - {{ card.colorIdentity }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="mat-card-content">
+          <img [src]="card.imageUrl" alt="{{ card.name }}" class="card-image">
+          <h4>{{ card.text }}</h4>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

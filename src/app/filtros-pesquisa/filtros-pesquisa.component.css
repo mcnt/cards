@@ -1,0 +1,10 @@
+@import "../app.component.css";
+.filter {
+    display: flex;
+}
+mat-form-field {
+    margin: 10px;
+}
+button {
+    margin-top: 20px;
+}

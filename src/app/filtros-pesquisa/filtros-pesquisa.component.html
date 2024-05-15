@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-card>
+    <div class="filter">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="nameFilter" matInput placeholder="Ex. khans">
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Bloco</mat-label>
+          <mat-select  [(ngModel)]="optionFilter">
+            @for (option of optionSelect; track option) {
+              <mat-option [value]="option">{{option}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="searchCards()">Buscar</button>
+    </div>
+  </mat-card>
+</div>

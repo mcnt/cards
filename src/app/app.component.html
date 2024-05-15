@@ -1,0 +1,9 @@
+<div *ngIf="!setId">
+    <app-filtros-pesquisa (filtersUpdated)="updateFilters($event)"></app-filtros-pesquisa>
+    <app-resultados-pesquisa (coletion)="getColetion($event)" [filtros]="filtros"></app-resultados-pesquisa>
+</div>
+
+<div *ngIf="setId">
+    <app-colecao-cartas [setId]="setId"></app-colecao-cartas>
+</div>
+
